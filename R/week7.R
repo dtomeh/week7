@@ -21,3 +21,10 @@ ggpairs(week7_tbl[5:13])
 ggplot(week7_tbl, aes(timeStart, q1)) + 
   geom_point() +
   labs(x="Date of Experiment", y="Q1 Score")
+
+ggplot(week7_tbl, aes(q1, q2,col=gender))+
+  geom_jitter()
+ggplot(week7_tbl, aes(q1, q2)) + 
+  geom_jitter()+
+  facet_grid(.~gender)+
+  labs(x="Score on Q1", y="Score on Q2")
