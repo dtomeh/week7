@@ -29,13 +29,13 @@ ggplot(week7_tbl, aes(q1, q2)) +
   facet_grid(.~gender)+
   labs(x="Score on Q1", y="Score on Q2")
 
-ggplot(week7_tbl, aes(gender, y=((timeStart-timeEnd)*60*60)))+ #timeEnd-timeStart negative
+ggplot(week7_tbl, aes(gender, y=((timeStart-timeEnd)*60*60)))+ 
   geom_boxplot()+
   labs(x="Gender", y="Time elapsed (secs)")
 
 
 ggplot(week7_tbl, aes(q5, q7, color=condition))+
-  geom_jitter(width = .1) + ##without width the points are too spread
+  geom_jitter(width = .1) +
   geom_smooth(method="lm", se=FALSE) + 
   labs(x= "Score on Q5", y="Score on Q7") +
   theme(panel.background = element_blank()) +
